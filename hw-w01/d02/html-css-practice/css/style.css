@@ -1,0 +1,178 @@
+/*
+body {
+  background-image: url("http://nydevelopers.com/components/images/shared/nyc_skyline.jpg");
+  background-size:cover;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+*/
+
+
+#menu {
+    max-width: 750px;
+    height: 35px;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 3px 2px 3px #0E2229;
+    background-color: rgba(32,32,32,.8);
+        /* opacity: 0.5; */
+        border-radius: 8px;
+}
+
+#menu ul {
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
+    margin-left: 7px;
+}
+
+#menu li {
+display: inline;
+padding: 8px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 8px 8px 8px;
+}
+/*
+#menu a:hover {
+    color: rgba(80, 20, 20, .4);
+    background-color: #FFF;
+}*/
+
+
+body {
+    display: block;
+    position: center;
+    background-image: url("http://www.hippocampusmagazine.com/wp-content/uploads/2012/01/dv376004.jpg");
+    background-size: cover;
+    margin: 0 auto;
+    max-width: 750px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 14px;
+  color: rgba(255,255,255,.6);
+  margin-left: 7px;
+}
+
+h3 {
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 25px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 5px;
+  color: rgba(255,255,255,.6);
+}
+section {
+  background-color: rgba(32,32,32,.4);
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding: 17px;
+  border-radius: 8px;
+}
+
+
+div {
+  height: 200px;
+  max-width: 725px;
+  background-color: white;
+  opacity: 0.5;
+  border-radius: 8px;
+}
+
+h5 {
+  opacity: 0.6;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+h6 {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+footer {
+  display: block;
+  position: center;
+  color: white;
+  font-size: 11px;
+  max-width: 146px;
+  background-color: rgba(32,32,32,.4);
+  margin-top: 10px;
+  margin-bottom: 122px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 8px;
+}
+
+span {
+  color: white;
+  font-size: 7px;
+}
+
+p {
+  word-wrap: left;
+  font-size: 12px;
+  color: black;
+  padding-right: 8px;
+  padding-left: 8px;
+  .wrap {
+   margin: 0 auto;
+   width: 680px;
+}
+}
+
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+h6 {
+  text-align: right;;
+  font-size: 15px;
+  margin-right: 22px;
+}
+
+.panel1contact {
+  height: 700px;
+  max-width: 725px;
+  background-color: white;
+  opacity: 0.5;
+  border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+http://nydevelopers.com/components/images/shared/nyc_skyline.jpg
+http://images.fineartamerica.com/images-medium-large-5/los-angeles-city-skyline-michael-tompsett.jpg
+*/
