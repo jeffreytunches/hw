@@ -1,0 +1,29 @@
+body {
+  background-image: url("http://www.gunningheating.co.uk/wp/wp-content/uploads/2014/05/bg-brushed-metal1.jpg");
+  background-size:cover;
+  font-family: 'Poiret One', cursive;
+}
+
+
+caption {
+    background-color: rgba(0, 0, 0, .8);
+    color: white;
+    padding: 7px;
+}
+
+
+table {
+  display: block;
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 8px;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  margin: 0 auto;
+  text-align: center.
+}
+
+td {
+  width: 700px;
+  margin: 0 auto;
+}
+
