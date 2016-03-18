@@ -4,6 +4,8 @@
 // global ID
 var modelId = ()
 var modelProfile = ()
+var modelName = ()
+var modelTagLine = ()
 //img
 var ffm-img1 = ()
 var ffm-img2 = ()
@@ -17,6 +19,9 @@ var ffm-age = ()
 var ffm-height = ()
 var ffm-bust-cup = ()
 var ffm-waist = ()
+var ffm-hips = ()
+var ffm-hair = ()
+var ffm-eyes = ()
 var ffm-dress = ()
 var ffm-shoe = ()
 //contact
