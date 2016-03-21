@@ -19,7 +19,9 @@ table {
   background-color: rgba(224, 224, 224, .5);
   display: block;
   margin: 0 auto;
+  padding: 11px;
   border-radius: 11px;
+  font-size: 12px;
 }
 
 tr {
@@ -28,4 +30,12 @@ width: 400px;
 
 .polaroids {
   width: 400px;
+}
+
+.digitals {
+font-size: 9.75px;
+}
+
+caption {
+  margin-top: 15px;
 }

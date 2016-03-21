@@ -1,0 +1,866 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/favicon.ico?v=1.0">
+    <title>Application Form | Ford Models | Ford Models</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/scouting.min.css">
+
+</head>
+<body ng-app=app>
+
+    <main>
+
+<div class="get-scouted-page" ng-controller="GetScouted as scouting" ng-init="scouting.setStep('scoutingForm')">
+
+    <div class="get-scouted-form-page container" id="get-scouted-form-page">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <ul class="col-xs-10 col-xs-offset-1 form-page-contents">
+
+
+<header class="clearfix">
+    <img class="ford-logo" src="/static/img/fordmodels-logo-scouting@2x.png" alt="Ford Models" />
+</header>
+                        <div class="form-page-content ng-hide ng-cloak fade-in" ng-show="scouting.isStep('scoutingForm') || scouting.isStep('scoutingFormLoading')">
+                            <h1 class="h1">
+                                Ready To Get Scouted?<br/>
+                                You’re In The Right Place.
+                            </h1>
+
+                            <p class="lead">
+                                “You never know when or where you will find the next new model,
+                                but you can bet someone from Ford Models will be looking”
+                                - Eileen Ford
+                            </p>
+
+                            <form id="get-scouted-form" name="scouting_form" class="get-scouted-form form-horizontal" novalidate
+                                  ng-init="scouting.action='/users/register-unowned/talent'"
+                                  ng-submit="scouting.submit()">
+
+<h2 class="section-heading">Contact Information</h2>
+<fieldset class="row">
+    <div class="col-xs-3">
+
+            <span class="h3">FORD's Tips to Getting Scouted:</span>
+            <span class="help-text">
+                Professional model scouts are looking for something different than you might expect.
+                We don&#8217;t want to see you in your fanciest outfit with lots of makeup on.
+                We are looking for a blank canvas.
+            </span>
+
+    </div>
+    <div class="col-xs-8 col-xs-offset-1">
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="first_name" class="control-label">First Name*</label>
+                <input type="text" name="first_name" id="first_name" class="form-control text-field" required=""
+                       ng-model="scouting.user.first_name"/>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.first_name.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.first_name.$error.required">First Name is required.</span>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <label for="last_name" class="control-label">Last Name*</label>
+                <input type="text" name="last_name" id="last_name" class="form-control text-field" required=""
+                       ng-model="scouting.user.last_name"/>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.last_name.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.last_name.$error.required">Last Name is required.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="phone" class="control-label">Phone*</label>
+                <input type="text" name="phone" id="phone" class="form-control text-field" required=""
+                       ng-model="scouting.user.phone"/>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.phone.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.phone.$error.required">Phone is required.</span>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <label for="email" class="control-label">Email*</label>
+                <input type="email" name="email" id="email" class="form-control text-field" required=""
+                       ng-model="scouting.user.email"
+                       ng-model-options="{updateOn: 'blur'}"/>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.email.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.email.$error.required">Email is required.</span>
+                    <span ng-show="scouting_form.email.$error.email">Invalid Email.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="country" class="control-label">Country*</label>
+                <div class="select-field-icon"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <select class="form-control select-field" name="country" id="country" required=""
+                        ng-model="scouting.user.country"
+                        ng-options="country.value as country.name for country in scouting.countries">
+                </select>
+                <div class="text-field-error ng-hide" ng-show="scouting_form.country.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.country.$error.required || scouting.user.country === null">Country is required.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="metro" class="control-label">Nearest Major City*</label>
+                <div class="select-field-icon"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <select class="select-field" name="metro" id="metro" required=""
+                        ng-model="scouting.user.metro"
+                        ng-options="metro.value as metro.name for metro in scouting.metros">
+                </select>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.metro.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.metro.$error.required || scouting.user.metro === null">City is required.</span>
+                </div>
+            </div>
+            <div class="col-xs-6 ng-hide" ng-show="scouting.user.country === 'united_states'">
+                <label for="zip_code" class="control-label">Zip Code</label>
+                <input type="text" name="zip_code" id="zip_code" class="form-control text-field"
+                       ng-model="scouting.user.zip_code"
+                       ng-pattern="/^(\d{5}-\d{4}|\d{5})$/"/>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.zip_code.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.zip_code.$error.pattern">Enter valid Zip Code.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="instagram" class="control-label">Instagram Username</label>
+                <input type="text" name="instagram" id="instagram" class="form-control text-field wide-field"
+                       ng-model="scouting.user.instagram_username"
+                       ng-pattern="/^[a-zA-Z0-9._]+$/"/>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.instagram.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.instagram.$error.pattern">Enter valid Instagram username.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</fieldset>
+<h2 class="section-heading">Personal Information</h2>
+<fieldset class="row">
+    <div class="col-xs-3">
+
+            &nbsp;
+
+    </div>
+    <div class="col-xs-8 col-xs-offset-1">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="gender" class="control-label">Gender*</label>
+                <div class="select-field-icon"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <select class="select-field" name="gender" id="gender" required=""
+                        ng-model="scouting.user.gender"
+                        ng-options="gender.value as gender.name for gender in scouting.genders">
+                </select>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.gender.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.gender.$error.required || scouting.user.gender === null">Gender is required.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label for="birthday_month" class="control-label">Birthday*</label>
+                <div class="select-field-icon"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <select class="select-field" name="birthday_month" id="birthday_month" required=""
+                        ng-model="scouting.user.birthday_month"
+                        ng-options="month.value as month.name for month in scouting.months"
+                        ng-change="scouting.updateUserAge()">
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="birthday_day" class="control-label">&nbsp;</label>
+                <div class="select-field-icon"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <select class="select-field" name="birthday_day" id="birthday_day" required=""
+                        ng-model="scouting.user.birthday_day"
+                        ng-options="day.value as day.name for day in scouting.days"
+                        ng-change="scouting.updateUserAge()">
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="birthday_year" class="control-label">&nbsp;</label>
+                <div class="select-field-icon"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <select class="select-field" name="birthday_year" id="birthday_year" required=""
+                        ng-model="scouting.user.birthday_year"
+                        ng-options="year.value as year.name for year in scouting.years"
+                        ng-change="scouting.updateUserAge()">
+                </select>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="text-field-error ng-hide"
+                     ng-show="(scouting_form.birthday_month.$touched && scouting_form.birthday_day.$touched && scouting_form.birthday_year.$touched) || scouting_form.$submitted">
+
+                    <span ng-show="(scouting_form.birthday_month.$error.required || scouting.user.birthday_month === null) || (scouting_form.birthday_day.$error.required || scouting.user.birthday_day === null) || (scouting_form.birthday_year.$error.required || scouting.user.birthday_year === null)">
+                        Birthday is required.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ng-hide" ng-show="scouting.user.age !== null && scouting.user.age < 18">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="guardian_full_name" class="control-label">Parent / Guardian Full Name*</label>
+                    <input type="text" name="guardian_full_name" id="guardian_full_name" class="form-control text-field wide-field" ng-model="scouting.user.guardian_full_name" required=""/>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.guardian_full_name.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.guardian_full_name.$error.required">Parent / Guardian name is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="guardian_phone" class="control-label">Parent / Guardian Phone*</label>
+                    <input type="text" name="guardian_phone" id="guardian_phone" class="form-control text-field wide-field" required=""
+                           ng-model="scouting.user.guardian_phone"/>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.guardian_phone.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.guardian_phone.$error.required">Parent / Guardian Phone is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="guardian_email" class="control-label">Parent / Guardian Email*</label>
+                    <input type="email" name="guardian_email" id="guardian_email" class="form-control text-field wide-field" required=""
+                           ng-model="scouting.user.guardian_email"
+                           ng-model-options="{updateOn: 'blur'}"/>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.guardian_email.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.guardian_email.$error.email">Invalid Email.</span>
+                        <span ng-show="scouting_form.guardian_email.$error.required">Parent / Guardian Email is required.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="bio" class="control-label">Tell us a little about yourself*</label>
+                <textarea name="bio" id="bio" class="form-control text-field wide-field" required=""
+                          ng-model="scouting.user.bio"
+                          ng-maxlength="500"></textarea>
+                <div class="bio-count">
+                    <span class="ng-hide" ng-show="scouting.user.bio.length > 0">[[ scouting.user.bio.length ]]/500</span>&nbsp;
+                </div>
+
+                <div class="text-field-error ng-hide" ng-show="scouting_form.bio.$touched || scouting_form.$submitted">
+                    <span ng-show="scouting_form.bio.$error.required">Bio is required.</span>
+                    <span ng-show="scouting_form.bio.$error.maxlength">Maximum 500 characters</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</fieldset>
+
+<h2 class="section-heading">Measurements</h2>
+<fieldset class="row">
+    <div class="col-xs-8 col-xs-offset-4">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="unit_type" class="control-label">Unit of Measurement*</label>
+                <div class="select-field-icon"><span class="glyphicon glyphicon-chevron-down"></span></div>
+                <select class="select-field" name="unit_type" id="unit_type"
+                        ng-model="scouting.user.unit_type">
+                    <option value="US">Imperial (in, lbs)</option>
+                    <option value="METRIC">Metric (cm, kg)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="ng-hide" ng-show="scouting.user.gender && scouting.user.gender === 'male'">
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="height_male" class="control-label">Height*</label>
+                    <scouting-select ng-model="scouting.user.height" required="true" items="scouting.heights" select-name="height_male" field-name="height" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.height_male.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.height_male.$error.required || scouting.user.height === null">Height is required.</span>
+                    </div>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="height_male" class="control-label">Height*</label>
+                    <scouting-select ng-model="scouting.user.height_metric" required="true" items="scouting.heights_metric" select-name="height_male_metric" field-name="height_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.height_male.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.height_male.$error.required || scouting.user.height === null">Height is required.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="waist_male" class="control-label">waist</label>
+                    <scouting-select ng-model="scouting.user.waist_size" items="scouting.waist_sizes" select-name="waist_male" field-name="waist_size" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="waist_male" class="control-label">waist</label>
+                    <scouting-select ng-model="scouting.user.waist_size_metric" items="scouting.waist_sizes_metric" select-name="waist_male_metric" field-name="waist_size_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="shoe_male" class="control-label">shoe*</label>
+                    <scouting-select ng-model="scouting.user.shoe_size_male" required="true" items="scouting.shoe_sizes_male" select-name="shoe_size_male" field-name="shoe_size_male" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.shoe_size_male.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.shoe_size_male.$error.required || scouting.user.shoe_sizes_male === null">Shoe size is required.</span>
+                    </div>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="shoe_male" class="control-label">shoe*</label>
+                    <scouting-select ng-model="scouting.user.shoe_size_male_metric" required="true" items="scouting.shoe_sizes_male_metric" select-name="shoe_size_male_metric" field-name="shoe_size_male_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.shoe_size_male.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.shoe_size_male.$error.required || scouting.user.shoe_sizes_male === null">Shoe size is required.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="eyes_male" class="control-label">eyes</label>
+                    <scouting-select ng-model="scouting.user.eye_color" items="scouting.eyeColors" select-name="eyes_male"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="hair_male" class="control-label">hair</label>
+                    <scouting-select ng-model="scouting.user.hair_color" items="scouting.hairColors" select-name="hair_male"></scouting-select>
+                </div>
+                <div class="col-xs-12">
+                    <label for="ethnicity_male" class="control-label">ethnicity</label>
+                    <scouting-select ng-model="scouting.user.ethnic_look" items="scouting.ethnicLooks" select-name="ethnicity_male"></scouting-select>
+                </div>
+            </div>
+        </div> <!-- END NG-SHOW FOR MALE GENDER -->
+
+
+        <div class="ng-hide" ng-show="scouting.user.gender && scouting.user.gender === 'female'">
+
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="height_female" class="control-label">Height*</label>
+                    <scouting-select ng-model="scouting.user.height" required="true" items="scouting.heights" select-name="height_female" field-name="height" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.height_female.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.height_female.$error.required || scouting.user.height === null">Height is required.</span>
+                    </div>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="height_female" class="control-label">Height*</label>
+                    <scouting-select ng-model="scouting.user.height_metric" required="true" items="scouting.heights_metric" select-name="height_female_metric" field-name="height_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.height_female.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.height_female.$error.required || scouting.user.height === null">Height is required.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="waist_female" class="control-label">waist</label>
+                    <scouting-select ng-model="scouting.user.waist_size" items="scouting.waist_sizes" select-name="waist_female" field-name="waist_size" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="waist_female" class="control-label">waist</label>
+                    <scouting-select ng-model="scouting.user.waist_size_metric" items="scouting.waist_sizes_metric" select-name="waist_female_metric" field-name="waist_size_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="shoe_female" class="control-label">shoe*</label>
+                    <scouting-select ng-model="scouting.user.shoe_size_female" required="true" items="scouting.shoe_sizes_female" select-name="shoe_size_female" field-name="shoe_size_female" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.shoe_size_female.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.shoe_size_female.$error.required || scouting.user.shoe_sizes_female === null">Shoe size is required.</span>
+                    </div>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="shoe_female" class="control-label">shoe*</label>
+                    <scouting-select ng-model="scouting.user.shoe_size_female_metric" required="true" items="scouting.shoe_sizes_female_metric" select-name="shoe_size_female_metric" field-name="shoe_size_female_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+
+                    <div class="text-field-error ng-hide" ng-show="scouting_form.shoe_size_female.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.shoe_size_female.$error.required || scouting.user.shoe_sizes_female === null">Shoe size is required.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="dress_size_female" class="control-label">Dress</label>
+                    <scouting-select ng-model="scouting.user.dress_size" items="scouting.dress_sizes" select-name="dress_size_female" field-name="dress_size" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="dress_size_female" class="control-label">Dress</label>
+                    <scouting-select ng-model="scouting.user.dress_size_metric" items="scouting.dress_sizes_metric" select-name="dress_size_female_metric" field-name="dress_size_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" ng-if="scouting.isUsUnits()">
+                    <label for="hip_size_female" class="control-label">Hips</label>
+                    <scouting-select ng-model="scouting.user.hip_size" items="scouting.hip_sizes" select-name="hip_size_female" field-name="hip_size" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+                <div class="col-xs-12" ng-if="!scouting.isUsUnits()">
+                    <label for="hip_size_female" class="control-label">Hips</label>
+                    <scouting-select ng-model="scouting.user.hip_size_metric" items="scouting.hip_sizes_metric" select-name="hip_size_female_metric" field-name="hip_size_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div ng-if="scouting.isUsUnits()">
+                        <label for="chest_size_female" class="control-label">Chest</label>
+                        <scouting-select ng-model="scouting.user.chest_size" items="scouting.chest_sizes" select-name="chest_size_female" field-name="chest_size" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                    </div>
+                    <div ng-if="!scouting.isUsUnits()">
+                        <label for="chest_size_female" class="control-label">Chest</label>
+                        <scouting-select ng-model="scouting.user.chest_size_metric" items="scouting.chest_sizes_metric" select-name="chest_size_female_metric" field-name="chest_size_metric" sync-units="scouting.fieldChanged(field, modelVal)"></scouting-select>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <label for="cup_size_female" class="control-label">Cup</label>
+                    <scouting-select ng-model="scouting.user.cup_size" items="scouting.cup_sizes" select-name="cup_size_female"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="eyes_female" class="control-label">eyes</label>
+                    <scouting-select ng-model="scouting.user.eye_color" items="scouting.eyeColors" select-name="eyes_female"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="hair_female" class="control-label">hair</label>
+                    <scouting-select ng-model="scouting.user.hair_color" items="scouting.hairColors" select-name="hair_female"></scouting-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="ethnicity_female" class="control-label">ethnicity</label>
+                    <scouting-select ng-model="scouting.user.ethnic_look" items="scouting.ethnicLooks" select-name="ethnicity_female"></scouting-select>
+                </div>
+            </div>
+        </div>  <!-- END NG-SHOW FOR FEMALE GENDER -->
+
+    </div>
+</fieldset>
+
+<h2 class="section-heading">Photo Submissions</h2>
+<fieldset class="row">
+    <div class="col-xs-3">
+
+            <span class="h3">FORD&#8217;s Tips for Being Scouted:</span>
+            <div class="help-text">
+                <ul>
+                    <li>Have a clean face with absolutely no makeup on.</li>
+                    <li>Pull your hair back.</li>
+                    <li>Wear a form fitting outfit like skinny jeans and a tank top. We need to see the shape.</li>
+                </ul>
+            </div>
+
+        <span class="h3">Recruitment Warning:</span>
+        <p class="help-text">
+            We believe it is important to advise models about deceitful people who may try to prey upon them.
+            Please be aware there are individuals on the internet falsely claiming to be representatives of FORD MODELS
+            or companies who host castings through the Ford Models casting platform.
+        </p>
+        <span class="h3">Please note the following:</span>
+        <div class="help-text">
+            <ul>
+                <li>You should never pay to attend a casting.</li>
+                <li>You should never share photos in the nude or in lingerie.</li>
+                <li>All FORD MODELS representatives correspond via email domains that end with fordmodels.com.
+                    If you are contacted by anyone claiming to be a representative of FORD MODELS, do not respond
+                    without first verifying their identity by promptly calling us directly at (212) 219-6500 and
+                    we&#8217;ll be happy to assist you.</li>
+                <li>You should always verify the identity of individuals who host castings through the Ford Models
+                    casting platform.</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="col-xs-8 col-xs-offset-1" ng-class="{'photos-male': scouting.user.gender == 'male', 'photos-portfolio': scouting.isPhotosTypePortfolio()}">
+        <div class="row">
+            <div class="col-xs-5">
+                <span class="control-label">FEATURE PHOTO*</span>
+                <div class="ng-hide text-field-error" ng-show="addphoto.isTooBig">Too large. Max 8mb</div>
+                <div class="ng-hide text-field-error" ng-show="!scouting.user.profile_photo && scouting_form.$submitted">
+                    Feature Photo is required.
+                </div>
+
+                <div id="cover-photo-upload"
+                     ng-controller="AddPhoto as addphoto"
+                     ng-init="addphoto.init('#cover-photo-upload > img', 'profile_photo', '.profile-photo', '.profile-photo .caption')">
+
+                    <div class="big-upload profile-photo"
+                        ng-model="addphoto.file" name="file"
+                        ngf-drag-over-class="dragover"
+                        ngf-fix-orientation="true"
+                        ngf-drop ngf-select ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="8MB" ngf-change="selected()">
+
+                        <img ngf-src="addphoto.file">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <span class="help-text photo-advice">
+                    For all photos, we require that the files are no larger than 8mb, and in .jpg, .jpeg, .png, or .bmp
+                    formats.
+                        If you&#8217;d like more information, please view our <a href="http://scouting.fordmodels.com/general/FORD_image_guidelines.pdf" target="_blank">Submission Guidelines</a>.
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <span class="control-label">
+                        Digitals*
+                </span>
+                <div class="digitals-photo-upload" id="digitals-photo-upload1"
+                     ng-controller="AddPhoto as addphoto"
+                     ng-init="addphoto.init('#digitals-photo-upload1 > img', 'full_length', '.full-length', '.full-length .caption')">
+
+                    <div class="big-upload digitals-upload full-length"
+                        ng-model="addphoto.file" name="file"
+                        ngf-drag-over-class="dragover"
+                        ngf-fix-orientation="true"
+                        ngf-drop ngf-select ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="8MB" ngf-change="selected()">
+
+                        <img ngf-src="addphoto.file">
+                    </div>
+                    <div class="ng-hide text-field-error photo-error" ng-show="addphoto.isTooBig">
+                        <span>Too large. Max 8mb</span>
+                    </div>
+                        <div class="ng-hide text-field-error photo-error" ng-show="!scouting.user.full_length && scouting_form.$submitted">
+                            <span>Full Length Photo is required.</span>
+                        </div>
+                </div>
+                <div class="digitals-photo-upload" id="digitals-photo-upload2"
+                     ng-controller="AddPhoto as addphoto"
+                     ng-init="addphoto.init('#digitals-photo-upload2 > img', 'waist_up', '.waist-up', '.waist-up .caption')">
+
+                    <div class="big-upload digitals-upload waist-up"
+                        ng-model="addphoto.file" name="file"
+                        ngf-drag-over-class="dragover"
+                        ngf-fix-orientation="true"
+                        ngf-drop ngf-select ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="8MB" ngf-change="selected()">
+
+                        <img ngf-src="addphoto.file">
+                    </div>
+                    <div class="ng-hide text-field-error photo-error" ng-show="addphoto.isTooBig">
+                        <span>Too large. Max 8mb</span>
+                    </div>
+                        <div class="ng-hide text-field-error photo-error" ng-show="!scouting.user.waist_up && scouting_form.$submitted">
+                            <span>Waist Up Photo is required.</span>
+                        </div>
+                </div>
+                <div class="digitals-photo-upload" id="digitals-photo-upload3"
+                     ng-controller="AddPhoto as addphoto"
+                     ng-init="addphoto.init('#digitals-photo-upload3 > img', 'shoulder_forward', '.shoulder-forward', '.shoulder-forward .caption')">
+
+                    <div class="big-upload digitals-upload shoulder-forward"
+                        ng-model="addphoto.file" name="file"
+                        ngf-drag-over-class="dragover"
+                        ngf-fix-orientation="true"
+                        ngf-drop ngf-select ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="8MB" ngf-change="selected()">
+
+                        <img ngf-src="addphoto.file">
+                    </div>
+                    <div class="ng-hide text-field-error photo-error" ng-show="addphoto.isTooBig">
+                        <span>Too large. Max 8mb</span>
+                    </div>
+                        <div class="ng-hide text-field-error photo-error" ng-show="!scouting.user.shoulder_forward && scouting_form.$submitted">
+                            <span>Shoulder Up Photo is required.</span>
+                        </div>
+                </div>
+                <div class="digitals-photo-upload" id="digitals-photo-upload4"
+                     ng-controller="AddPhoto as addphoto"
+                     ng-init="addphoto.init('#digitals-photo-upload4 > img', 'shoulder_three_quarters', '.shoulder-three-quarters', '.shoulder-three-quarters .caption')">
+
+                    <div class="big-upload digitals-upload shoulder-three-quarters"
+                        ng-model="addphoto.file" name="file"
+                        ngf-drag-over-class="dragover"
+                        ngf-fix-orientation="true"
+                        ngf-drop ngf-select ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="8MB" ngf-change="selected()">
+
+                        <img ngf-src="addphoto.file">
+                    </div>
+                    <div class="ng-hide text-field-error photo-error" ng-show="addphoto.isTooBig">
+                        <span>Too large. Max 8mb</span>
+                    </div>
+                        <div class="ng-hide text-field-error photo-error" ng-show="!scouting.user.shoulder_three_quarters && scouting_form.$submitted">
+                            <span>Shoulder Up, 3/4 Photo is required.</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<h2 class="section-heading">&nbsp;</h2>
+<fieldset ng-show="scouting.isStep('scoutingForm')">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="accept_rules" ng-model="scouting.user.accept_rules" required="" />
+
+                        I have read and accept the <a href="http://scouting.fordmodels.com/general/rules.php" target="_blank">Application Process and Rules</a>
+                        and the <a href="http://scouting.fordmodels.com/general/privacy.php" target="_blank">Privacy Policy</a>.
+
+                    <span class="text-field-error ng-hide" ng-show="scouting_form.accept_rules.$touched || scouting_form.$submitted">
+                        <span ng-show="scouting_form.accept_rules.$error.required">Accepting the Privacy Policy is required.</span>
+                    </span>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="join_community" ng-model="scouting.user.is_ford_community_member" />
+                    I would like to join the Ford Community. By checking this box I agree to receive information about happenings and events, new Ford videos and content, updates from behind the scenes and special offers and partners.
+                </label>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+                                <!-- Submit -->
+                                <div class="row submit-row" ng-show="scouting.isStep('scoutingForm')">
+                                    <div class="col-xs-8 col-xs-offset-2">
+                                        <div class="server-error" ng-show="scouting.serverError">
+                                            [[scouting.serverError]]
+                                        </div>
+
+                                        <button type="submit" class="button" ng-class="{'button-enabled' : scouting.isFormComplete()}">
+                                            Get Scouted
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="ng-hide" ng-show="scouting.isStep('scoutingFormLoading')">
+                                    <div class="register-spinner">
+<div class="ford-spinner">
+    <div class="spinner-dot rotate_01"></div>
+    <div class="spinner-dot rotate_02"></div>
+    <div class="spinner-dot rotate_03"></div>
+    <div class="spinner-dot rotate_04"></div>
+    <div class="spinner-dot rotate_05"></div>
+    <div class="spinner-dot rotate_06"></div>
+    <div class="spinner-dot rotate_07"></div>
+    <div class="spinner-dot rotate_08"></div>
+    <div class="spinner-dot rotate_09"></div>
+    <div class="spinner-dot rotate_10"></div>
+    <div class="spinner-dot rotate_11"></div>
+    <div class="spinner-dot rotate_12"></div>
+    <div class="spinner-dot rotate_13"></div>
+    <div class="spinner-dot rotate_14"></div>
+    <div class="spinner-dot rotate_15"></div>
+    <div class="spinner-dot rotate_16"></div>
+    <div class="spinner-dot rotate_17"></div>
+    <div class="spinner-dot rotate_18"></div>
+    <div class="spinner-dot rotate_19"></div>
+    <div class="spinner-dot rotate_20"></div>
+    <div class="spinner-dot rotate_21"></div>
+    <div class="spinner-dot rotate_22"></div>
+    <div class="spinner-dot rotate_23"></div>
+    <div class="spinner-dot rotate_24"></div>
+    <div class="spinner-dot rotate_25"></div>
+    <div class="spinner-dot rotate_26"></div>
+    <div class="spinner-dot rotate_27"></div>
+</div>
+<span class="sub-text">UPLOADING PHOTOS ([[scouting.uploadProgress]]%) AND SUBMITTING APPLICATION...</span>                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="get-scouted-form-success ng-hide ng-cloak" ng-show="scouting.isStep('scoutingFormSuccess')">
+                            <div class="success-box bright">
+                                <div class="checkmark"></div>
+                                <h1 class="h1">Application Complete!</h1>
+                                <div class="message">
+                                    Thank you for completing the Ford Model Scouting application. We review each submission
+                                    carefully, but due to high volumes, we can't contact all our applicants. If you are
+                                    selected, a Ford Scout will reach out to you directly.
+                                </div>
+                            </div>
+                            <div class="back-link">
+                                <a href="http://fordmodels.com">Back to FordModels.com</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.14.3.js"></script>
+    <script src="js/angular-smooth-scroll.js"></script>
+    <script src="js/ng-file-upload.js"></script>
+    <script src="js/scouting.modules.js"></script>
+    <script src="js/scouting.services.js"></script>
+    <script src="js/scouting.select.js"></script>
+    <script src="js/unit.service.js"></script>
+    <script src="js/scouting.js"></script>
+
+<script>
+Ford = window.Ford || {};
+Ford.countries = ["United States","Canada","United Kingdom","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Bouvet Island","Brazil","Brunei Darussalam","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Cook Islands","Costa Rica","Ivory Coast","Croatia (Hrvatska)","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Guiana","French Polynesia","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guadeloupe","Guam","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Korea","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libyan","Liechtenstein","Lithuania","Luxembourg","Macao","Macedonia, ","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Martinique","Mauritania","Mauritius","Mexico","Micronesia","Moldova, Republic of","Monaco","Mongolia","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Niue","Norfolk Island","Northern Mariana Islands","Norway","Oman","Pakistan","Palau","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Pitcairn","Poland","Portugal","Puerto Rico","Qatar","R&eacute;union","Romania","Russian Federation","Rwanda","Saint Helena","Saint Kitts and Nevis","Saint Lucia","Saint Pierre","Saint Vincent","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","Spain","Sri Lanka","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syrian Arab Republic","Taiwan ","Tajikistan","Tanzania","Thailand","Togo","Tokelau","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Turks","Tuvalu ","Uganda","Ukraine","United Arab Emirates","Uruguay","Uzbekistan","Vanuatu","Venezuela","Vietnam","Virgin Islands (British)","Virgin Islands (US) ","Wallis","Western Sahara","Yemen","Serbia","Zambia","Zimbabwe","Montenegro"];
+Ford.metros = [];
+   Ford.metros.push({value:"usa_ny_new york",name:"New York, NY"});
+   Ford.metros.push({value:"usa_ca_los angeles",name:"Los Angeles, CA"});
+   Ford.metros.push({value:"usa_il_chicago",name:"Chicago, IL"});
+   Ford.metros.push({value:"usa_ak_anchorage",name:"Anchorage, AK"});
+   Ford.metros.push({value:"usa_ga_atlanta",name:"Atlanta, GA"});
+   Ford.metros.push({value:"usa_tx_austin",name:"Austin, TX"});
+   Ford.metros.push({value:"usa_md_baltimore",name:"Baltimore, MD"});
+   Ford.metros.push({value:"spain_barcelona",name:"Barcelona, Spain"});
+   Ford.metros.push({value:"china_beijing",name:"Beijing, China"});
+   Ford.metros.push({value:"germany_berlin",name:"Berlin, Germany"});
+   Ford.metros.push({value:"usa_al_birmingham",name:"Birmingham, AL"});
+   Ford.metros.push({value:"usa_ma_boston",name:"Boston, MA"});
+   Ford.metros.push({value:"usa_nc_charlotte",name:"Charlotte, NC"});
+   Ford.metros.push({value:"usa_oh_columbus",name:"Columbus, OH"});
+   Ford.metros.push({value:"usa_tx_dallas",name:"Dallas, TX"});
+   Ford.metros.push({value:"usa_co_denver",name:"Denver, CO"});
+   Ford.metros.push({value:"usa_hi_honolulu",name:"Honolulu, HI"});
+   Ford.metros.push({value:"turkey_istanbul",name:"Istanbul, Turkey"});
+   Ford.metros.push({value:"south_africa_johannesburg",name:"Johannesburg, South Africa"});
+   Ford.metros.push({value:"usa_ks_kansas city",name:"Kansas City, KS"});
+   Ford.metros.push({value:"usa_nv_las vegas",name:"Las Vegas, NV"});
+   Ford.metros.push({value:"usa_ar_little rock",name:"Little Rock, AR"});
+   Ford.metros.push({value:"england_london",name:"London, England"});
+   Ford.metros.push({value:"usa_ky_louisville",name:"Louisville, KY"});
+   Ford.metros.push({value:"spain_madrid",name:"Madrid, Spain"});
+   Ford.metros.push({value:"mexico_mexico city",name:"Mexico City, Mexico"});
+   Ford.metros.push({value:"usa_fl_miami",name:"Miami, FL"});
+   Ford.metros.push({value:"italy_milan",name:"Milan, Italy"});
+   Ford.metros.push({value:"usa_wi_milwaukee",name:"Milwaukee, WI"});
+   Ford.metros.push({value:"usa_mn_minneapolis",name:"Minneapolis, MN"});
+   Ford.metros.push({value:"canada_montreal",name:"Montreal, Canada"});
+   Ford.metros.push({value:"russia_moscow",name:"Moscow, Russia"});
+   Ford.metros.push({value:"germany_munich",name:"Munich, Germany"});
+   Ford.metros.push({value:"usa_tn_nashville",name:"Nashville, TN"});
+   Ford.metros.push({value:"usa_la_new orleans",name:"New Orleans, LA"});
+   Ford.metros.push({value:"usa_ok_oklahoma city",name:"Oklahoma City, OK"});
+   Ford.metros.push({value:"usa_fl_orlando",name:"Orlando, FL"});
+   Ford.metros.push({value:"france_paris",name:"Paris, France"});
+   Ford.metros.push({value:"usa_pa_philadelphia",name:"Philadelphia, PA"});
+   Ford.metros.push({value:"usa_or_portland",name:"Portland, OR"});
+   Ford.metros.push({value:"usa_nc_raleigh",name:"Raleigh, NC"});
+   Ford.metros.push({value:"usa_tx_san antonio",name:"San Antonio, TX"});
+   Ford.metros.push({value:"usa_ca_san diego",name:"San Diego, CA"});
+   Ford.metros.push({value:"usa_ca_san francisco",name:"San Francisco, CA"});
+   Ford.metros.push({value:"usa_az_scottsdale",name:"Scottsdale, AZ"});
+   Ford.metros.push({value:"usa_wa_seattle",name:"Seattle, WA"});
+   Ford.metros.push({value:"sweden_stockholm",name:"Stockholm, Sweden"});
+   Ford.metros.push({value:"australia_sydney",name:"Sydney, Australia"});
+   Ford.metros.push({value:"usa_fl_tampa bay",name:"Tampa Bay, FL"});
+   Ford.metros.push({value:"japan_tokyo",name:"Tokyo, Japan"});
+   Ford.metros.push({value:"canada_toronto",name:"Toronto, Canada"});
+   Ford.metros.push({value:"canada_vancouver",name:"Vancouver, Canada"});
+   Ford.metros.push({value:"austria_vienna",name:"Vienna, Austria"});
+
+Ford.eye_colors = [];
+   Ford.eye_colors.push({value:"blue",name:"blue"});
+   Ford.eye_colors.push({value:"blue_green",name:"blue-green"});
+   Ford.eye_colors.push({value:"blue_grey",name:"blue-grey"});
+   Ford.eye_colors.push({value:"black",name:"black"});
+   Ford.eye_colors.push({value:"brown",name:"brown"});
+   Ford.eye_colors.push({value:"green",name:"green"});
+   Ford.eye_colors.push({value:"grey",name:"grey"});
+   Ford.eye_colors.push({value:"hazel",name:"hazel"});
+   Ford.eye_colors.push({value:"hazel_green",name:"hazel-green"});
+
+Ford.hair_colors = [];
+   Ford.hair_colors.push({value:"blonde",name:"blonde"});
+   Ford.hair_colors.push({value:"black",name:"black"});
+   Ford.hair_colors.push({value:"brown",name:"brown"});
+   Ford.hair_colors.push({value:"auburn",name:"auburn"});
+   Ford.hair_colors.push({value:"red",name:"red"});
+   Ford.hair_colors.push({value:"grey",name:"grey"});
+   Ford.hair_colors.push({value:"salt_pepper",name:"salt and pepper"});
+   Ford.hair_colors.push({value:"white",name:"white"});
+   Ford.hair_colors.push({value:"silver",name:"silver"});
+   Ford.hair_colors.push({value:"shaved",name:"shaved"});
+
+Ford.ethnic_looks = [];
+   Ford.ethnic_looks.push({value:"caucasian",name:"white"});
+   Ford.ethnic_looks.push({value:"hispanic",name:"hispanic"});
+   Ford.ethnic_looks.push({value:"african_american",name:"black"});
+   Ford.ethnic_looks.push({value:"east_indian",name:"indian"});
+   Ford.ethnic_looks.push({value:"middle_eastern",name:"middle eastern"});
+   Ford.ethnic_looks.push({value:"asian",name:"asian"});
+   Ford.ethnic_looks.push({value:"pacific_islander",name:"pacific islander"});
+   Ford.ethnic_looks.push({value:"multi_racial",name:"multi-racial"});
+
+</script>
+
+
+    <!-- Analytics -->
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69159077-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<!-- GoSquared -->
+<script>
+    !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+                    arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+        d.src='tracker.js';q.parentNode.
+                insertBefore(d,q)}(window,document,'script','_gs');
+
+    _gs('2M0E7ZML752HWRNA');
+
+</script>
+
+</body>
+</html>

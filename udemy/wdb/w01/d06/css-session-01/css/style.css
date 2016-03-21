@@ -1,0 +1,111 @@
+/*
+COLOR IN CSS
+*/
+
+/*
+Named
+there are about 130 named colors like red blue green etc. but also many more
+but this is not a preferred way of color naming and is limited to the 130 or so
+"named" colors
+*/
+
+/*
+   h1 {
+      color: purple;
+    }
+
+   li {
+     color: salmon;
+   }
+
+    h1 {
+      color: moccasin;
+    }
+*/
+
+
+
+
+/*
+Hexadecimal
+# + string of 6 hexadecimal numbers(from 0-F)
+*/
+
+    /*NOTE while making red FF and green 00 and blue 00  we get a full red
+    so #FF0000 will be red
+
+    so if we also make green = FF we get back yellow just as in a normal color pallet
+    BUT IF WE MAKE all the colors full FFFFFF we get white rather than black
+    being that light transmission is involved */
+
+
+/*   h1 {
+      color: #FF0000;
+    }
+
+   li {
+     color: #FFFF00;
+   }
+
+    h4 {
+      color: #FFFFFF;
+    }
+
+*/
+
+/*
+RGB
+*/
+
+/*h1 {
+  color: rgb(0, 255, 0);
+}
+
+li {
+  color: rgb(100, 0 100);
+}
+
+h4 {
+  color: rgb(11, 99, 150);
+}
+
+0 = blk
+255 = wht
+
+*/
+
+
+/*
+RGBA
+R = red     0-255
+G = green   0-255
+B = blue    0-255
+A = alfa    0-1  (opacity)
+
+alfa properties
+1
+.9
+.8
+.7
+.6
+.5
+.4
+.3
+.2
+.1
+0
+
+*/
+
+h1 {
+  color: rgba(11, 99, 150, 1);
+}
+
+li {
+  color: rgba(100, 0, 100, .6);
+}
+
+h4 {
+  color: rgba(11, 99, 150, .2);
+}
+

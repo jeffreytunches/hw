@@ -1,0 +1,50 @@
+
+
+body {
+  font-family: 'Poiret One', cursive;
+}
+
+section {
+  background-color: rgba(0,0,0,.5);
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 8px;
+  padding: 11px;
+  margin-bottom: 11px;
+}
+
+table {
+  display: block;
+  margin: 0 auto;
+  max-width: 500;
+}
+
+.imageLoader {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/*.uploadButton {
+  width: 160px;
+}*/
+
+/*colgroup {
+  align: center;
+}*/
+
+/*div {
+  background-color: rgba(90,0,0,.5);
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}*/
+
+
+
+
+input {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
