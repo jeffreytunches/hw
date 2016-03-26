@@ -1,0 +1,159 @@
+/*ELEMENT SELECTOR*/
+
+/* select all instances of and element*/
+
+body {
+  background: orange;
+}
+
+li {
+  border: 1px solid black;
+}
+
+
+
+/*id SELECTOR*/
+/*
+#elementName (anyName youChoose) to select all IDs of same value
+*/
+#videos {
+  color: white;
+  font-size: 12px;
+}
+
+#anyThingYouWant {
+  background: red;
+}
+/*
+in summery IDs are used as "hooks" to single out individual items
+we can have as may IDs as we want but only one insstance of each ID
+*/
+
+
+
+
+/*class SELECTOR*/
+
+/*
+A class opperates just like an ID but can be used for as many elements
+as we choose these elements are now within our new CLASS"
+*/
+
+.firstClass {
+  font-family: times;
+  font-size: 28px;
+  text-decoration: overline; /*Note: the use of overline*/
+}
+
+.secondClass {
+  text-align: right;
+  color: red;
+  text-decoration: line-through;
+}
+
+
+
+/*
+http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+*/
+
+/*Star SELECTOR*/
+
+* {
+  border: 1px solid red;
+}
+
+/*Desendedant SELECTOR*/
+
+ul li a .class #id {
+/*nested one inside another parent/child*/
+}
+
+/*Adjacent SELECTOR*/
+
+h4 + ul {
+
+}
+
+/*Attribute SELECTOR*/
+
+a [href=" "]
+
+input [type="text"]
+input [type="password"]
+input [type="checkbox"]
+
+
+/*nth of type SELECTOR*/
+/*selects by tyle defined */
+
+ /* every second per grouping in this case*/
+
+
+ul:nth-of-type(2) {
+  background: blue;
+}
+
+ /* every every other grouping in this case*/
+
+ul:nth-of-type(even) {
+  background: lightgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*SPCIFICITY*/
+
+/*Type */
+/*least order of magnitude*/
+li {
+
+}
+
+li a {
+
+}
+
+li + a {
+
+}
+
+/*Class, Attribute, and Pseudo-Class Selectors*/
+/*10x grreater order of magnitude than "type"*/
+.hello {
+  /*class*/
+}
+
+input[type="text"] {
+  /*attribute*/
+}
+
+a.hover   /*Pseudo CLass Selectors*/
+input:checked
+
+
+/*Id Selectors*/
+/*10x grreater order of magnitude than "class"*/
+#hello
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+p {
+
+/*Content - Width and Height*/
+
+width: 40%;
+height: 70px;
+/*Border*/
+
+border: 2px dashed blue;
+
+/*Padding*/
+
+/*padding: 10px;*/
+padding-left: 40px;
+padding-top: 40px;
+
+/*Margin*/
+/*margin: 100px;*/
+/*margin-top: 500px;*/
+/*margin: 20px 40px 500px 100px;*/
+/*margin: 0 auto 0 auto;*/
+margin: 0 auto;
+margin: 50px 20px;
+}
+
+tr {
+  /*height: 150px;*/
+  background-color: rgba(0,0,0,.4);
+}
+
+td {
+  width: 100px;
+  height: 150px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+thead {
+  height: 30px;
+    background-color: rgba(0,0,0,.7);
+}
+col {
+  width: 100px;
+}
+
+table {
+  color: white;
+}
+
+tr:names {
+  height: 30px;
+}
+
+h1 {
+  display: block;
+  margin: 50px, auto;
+}

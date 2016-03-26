@@ -1,0 +1,68 @@
+/*ELEMENT SELECTOR*/
+
+/* select all instances of and element*/
+
+body {
+  background: orange;
+}
+
+li {
+  border: 1px solid black;
+}
+
+
+
+/*ID SELECTOR*/
+/*
+#elementName (anyName youChoose) to select all IDs of same value
+*/
+#videos {
+  color: white;
+  font-size: 12px;
+}
+
+#anyThingYouWant {
+  background: red;
+}
+/*
+in summery IDs are used as "hooks" to single out individual items
+we can have as may IDs as we want but only one insstance of each ID
+*/
+
+
+
+
+/*CLASS SELECTOR*/
+
+/*
+A class opperates just like an ID but can be used for as many elements
+as we choose these elements are now within our new CLASS"
+*/
+
+.firstClass {
+  font-family: times;
+  font-size: 28px;
+  text-decoration: overline; /*Note: the use of overline*/
+}
+
+.secondClass {
+  text-align: right;
+  color: red;
+  text-decoration: line-through;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

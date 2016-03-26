@@ -1,0 +1,41 @@
+
+
+body {
+  font-family: 'Poiret One', cursive;
+}
+
+div {
+  background-color: rgba(255,255,255, 0);
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  border-radius: 8px;
+  padding: 11px;
+  margin-bottom: 11px;
+}
+
+table {
+  width: 500px;
+  background-color: rgba(224, 224, 224, .5);
+  display: block;
+  margin: 0 auto;
+  padding: 11px;
+  border-radius: 11px;
+  font-size: 12px;
+}
+
+tr {
+width: 400px;
+}
+
+.polaroids {
+  width: 400px;
+}
+
+.digitals {
+font-size: 9.75px;
+}
+
+caption {
+  margin-top: 15px;
+}
