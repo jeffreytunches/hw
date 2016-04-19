@@ -1,0 +1,66 @@
+#foot {
+  text-align: right;
+  font-size: 8px;
+  color: darkgrey;
+  margin-top: 20px;
+}
+
+.navbar-inverse {
+  background: rgb(47,79,79);
+}
+
+body {
+  margin-top: 70px;
+}
+
+.school {
+  color: rgb(128,128,128);
+  text-decoration: overline;
+}
+
+.on-campus {
+  color: rgb(255,165,0);
+  font-size: 6px;
+}
+
+.online-course{
+  color: rgb(46,139,87);
+  font-size: 6px;
+}
+
+.jumbotron {
+  padding-left: 11px;
+}
+
+#head-copy {
+  font-size: 18px;
+}
+
+#flatiron {
+  color: rgb(47,79,79);
+  font-size: 24px;
+}
+
+#careers-body {
+  font-size: 16px;
+}
+#about-body {
+  font-size: 16px;
+}
+
+.status {
+  color: rgb(157,79,79);
+  text-decoration: blink;
+}
+
+#note {
+  font-size: 12px;
+}
+
+#udemy {
+  font-size: 16px;
+}
+
+#t-ceo {
+  font-size: 16px;
+}

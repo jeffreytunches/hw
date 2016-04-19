@@ -1,0 +1,102 @@
+/*div "above-nav" image area above navbar*/
+.above-nav {
+  padding-top: 10px;
+  padding-bottom: 1px;
+  padding-left: 11px;
+  background: rgba(0,0,0,.7);
+}
+
+body {
+  background-image: url("http://accessnewmedia.com/model_callbacks/images/light-runway.jpg");
+  background-size:cover;
+  display: block;
+  font-family: 'Lato', sans-serif;
+}
+
+#top-logo {
+  text-align: center;
+}
+
+#americas {
+  color: white;
+  width: 50%;
+}
+
+#americas-button {
+  margin-left: 100px;
+}
+
+#cities {
+  font-size: 8px;
+  color: rgba(220,220,220,.7);
+}
+
+#talents {
+  font-size: 11px;
+  color: rgba(220,220,220,.7);
+}
+
+.partners {
+ margin-bottom: 10px;
+}
+
+#search-box {
+  background: rgba(0,0,0,.75);
+  border-radius: 8px;
+  height: 90%px;
+  width: 70%,
+  color: rgb(255,255,255);
+  padding: 11px;
+  /*margin-right: 40px;*/
+  margin: 0 40px 0 27%;
+  font-family: 'Lato', sans-serif;
+}
+
+.search-titles {
+  /*color: rgb(71,110,104);*/
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.search-sub-titles {
+  /*color: rgb(71,110,104);*/
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.btn-inverse {
+background-color: #476e68;
+color: white;
+}
+
+.prize {
+  margin-left: 20px;
+  color: rgba(255,0,0,.7);
+  font-size: 11px;
+}
+
+.form-control {
+  height: 50%;
+}
+
+.left-50px {
+  margin-left: 50px;
+ /* color: #476e68;*/
+  font-size: 11px;
+}
+
+footer {
+  font-size: 9px;
+}
+
+#foot-logo {
+  padding-top: 5px;
+}
+
+.glyphicon-globe {
+ font-size: 17px;
+}

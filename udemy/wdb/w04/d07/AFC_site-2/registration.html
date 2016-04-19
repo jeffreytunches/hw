@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ArtsForCause.org</title>
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- direct css -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- bootstrap navbar -->
+<!-- <nav class="navbar navbar-invert navbar-fixed-top"> --> <!-- NOTE: this "invert" causes the background to be transparent in the navbar ;-) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Arts for Cause</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">about <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">news</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">artists <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Molly Reusser</a></li>
+            <li><a href="#">Mercado Central</a></li>
+            <li><a href="#">Donald Kinsey</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Mercado Central</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">contact <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">donate</a></li>
+            <li><a href="#">mission</a></li>
+            <li><a href="#">events</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">current campaign</a></li>
+          </ul>
+        </li>
+        <li><a href="registration.html">register</a></li>
+      </ul>
+<!--       <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form> -->
+      <ul class="nav navbar-nav navbar-right">
+        <form class="form-inline">
+         <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail3">email address</label>
+           <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+         </div>
+         <div class="form-group">
+          <label class="sr-only" for="exampleInputPassword3">password</label>
+           <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+         </div>
+         <div class="checkbox">
+          <label>
+           <input type="checkbox"> <span id="login_rem">remember me </span>
+          </label>
+         </div>
+         <button type="submit" class="btn btn-default">sign in</button>
+        </form>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- top pg content -->
+<div class="container">
+  <div class="jumbotron">
+    <h1><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span> Registration</h1>
+    <h2>ArtsForCause.org <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span></h2>
+     <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="regi">Email address</span></label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"><span class="regi">Password</span></label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile"><span class="regi">Avatar</span></label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">please select an image of yourself or organization</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Agree to terms of service
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+     <p id="jmbotron">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+     tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+</div>
+<!-- med pg content -->
+
+
+<!-- footer -->
+<nav class="navbar navbar-invert navbar-bottom">
+  <div class="container">
+    <p>powered by XI™ </p>
+  </div>
+</nav>
+<!-- <div class="navbar navbar-default">
+  <div class="container">
+    <p>powered by XI </p>
+  </div> -->
+</div>
+<!-- Bootstrap scripts -->
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
